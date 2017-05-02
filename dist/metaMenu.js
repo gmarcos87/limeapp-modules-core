@@ -27,7 +27,7 @@ var MetaMenu = exports.MetaMenu = function (_Component) {
   _createClass(MetaMenu, [{
     key: 'render',
     value: function render() {
-      return React.createElement(
+      return (0, _preact.h)(
         'a',
         { href: '#/config', translate: 'yes' },
         'Config'
