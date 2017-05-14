@@ -1,11 +1,12 @@
 {
-  "name": "@gmarcos87/lime-plugin-core",
+  "name": "lime-plugin-core",
   "version": "0.1.0",
   "description": "Core module for LiMe App",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -s inline -d dist",
     "eslint": "eslint {src,test}",
+    "translations": "node ./node_modules/i18nline/bin/i18nline.js export",
     "test": "cross-env NODE_ENV=test nyc mocha"
   },
   "author": "Marcos Gutierrez <gmarcos87@gmail.com>",
@@ -30,6 +31,7 @@
     "istanbul": "^0.4.5",
     "jsdom": "^9.12.0",
     "jsdom-global": "^2.1.1",
+    "json-loader": "^0.5.4",
     "mocha": "^3.3.0",
     "nyc": "^10.2.0",
     "preact": "^8.1.0",

@@ -1,7 +1,5 @@
 import { h, Component } from 'preact';
 
-import I18n from 'i18n-js';
-
 import { bindActionCreators } from 'redux';
 import { connect } from 'preact-redux';
 
@@ -29,14 +27,14 @@ export class Meta extends Component {
             <div class="row">
                 <div class="six columns">
                   <p>
-                    <label translate='yes'>Current status</label>
-                    <span  translate='yes'>Conected Host</span>: {this.props.selectedHost}<br />
-                    <span  translate='yes'>Base Host</span>: {this.props.base}
+                    <label>{I18n.t('Current status')}</label>
+                    <span>{I18n.t('Conected Host')}</span>: {this.props.selectedHost}<br />
+                    <span>{I18n.t('Base Host')}</span>: {this.props.base}
                   </p>
                 </div>
                 <div class="six columns">
                  <p>
-                    <label for="exampleRecipientInput" translate='yes'>Select new base station</label>
+                    <label>{I18n.t('Select new base station')}</label>
                     <select class="u-full-width" onChange={this.handleChange.bind(this)} >
                         <option selected value={this.props.selectedHost}>{this.props.selectedHost}</option>
                         {this.props.stations.map(x => (<option value={x}>{x}</option>))}
@@ -45,7 +43,7 @@ export class Meta extends Component {
                 </div>
             </div>
             
-            <button class="button green block" type="submit" translate='yes'>Change</button>
+            <button class="button green block" type="submit">{I18n.t('Change')}</button>
             </form>
       </div>
     );
