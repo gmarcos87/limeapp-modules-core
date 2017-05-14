@@ -18,7 +18,7 @@ export const initialState = {
   interval: 1500,
   stations: [],
   base: '',
-  home: '/tasks',
+  home: '/rx',
   selectedHost: ''
 };
 
