@@ -1,5 +1,5 @@
 {
-  "name": "lime-plugin-core",
+  "name": "@libremesh/limeapp-plugin-core",
   "version": "0.1.1",
   "description": "Core module for LiMe App",
   "main": "dist/index.js",
@@ -24,6 +24,7 @@
     "babel-register": "^6.24.1",
     "chai": "^3.5.0",
     "cross-env": "^4.0.0",
+    "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",
     "install": "^0.8.8",

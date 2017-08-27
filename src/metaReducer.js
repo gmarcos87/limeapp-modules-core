@@ -38,7 +38,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       }
       return Object.assign({}, state, {selectedHost: payload.hostname});
     case CONECTION_CHANGE_CURRENT_BASE:
-      return Object.assign({}, state, {selectedHost: payload.hostname});
+      return Object.assign({}, state, {selectedHost: ''});
     case CONECTION_LOAD_NEIGHBORS_SUCCESS:
       return Object.assign({}, state, {stations:payload.concat([state.base]).sort(),status:'ready'});
     default:

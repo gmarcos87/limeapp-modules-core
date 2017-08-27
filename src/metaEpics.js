@@ -22,8 +22,23 @@ import {
 import 'rxjs/add/operator/mapTo';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/catch';
 
 import { push } from 'preact-router-redux';
+
+const genericUbus = ( action$, store, { wsAPI } ) =>
+  action$.ofType('UBUSCALL')
+    .map(x => x.payload)
+    .mergeMap( payload => wsAPI.call(
+      store.getState().meta.sid,
+      payload.action,
+      payload.data,
+      payload.method,
+      payload.path
+    ).catch(payload => ([{type:'UBUSCALL_ERROR', payload}])))
+    .map(payload => ({ type: 'UBUSCALL_SUCCESS', payload }));
+    
+
 
 const conectionOff = ( action$ ) =>
   action$.ofType(CONECTION_START)
@@ -64,6 +79,7 @@ const redirectOnConnection = ( action$, store ) =>
 
 
 export default {
+  genericUbus,
   conectionOff,
   conectionAction,
   changeUrlAction,
